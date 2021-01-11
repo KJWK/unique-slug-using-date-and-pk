@@ -1,0 +1,16 @@
+class Student():
+    date_added = models.DateField(default=timezone.now) 
+    entered_by = models.ForeignKey(User, on_delete=models.RESTRICT) 
+    first_name = models.CharField(max_length=50)   
+    last_name = models.CharField(max_length=50)
+ 
+def save(self, *args, **kwargs):  
+        user_id = str(self.workday.worker_id)  
+        month = str(self.entry_time.month)  
+        day = str(self.entry_time.day)
+        hour = str(self.entry_time.hour)
+        minutes = str(self.entry_time.minute)
+        secs = str(self.entry_time.second)        
+     
+        
+        self.slug = user_id + month + day + hour + minutes + secs
